@@ -11,7 +11,6 @@ interface Props {
   visible: boolean;
   onClose(state: boolean): void;
   onSelect?(src: string): void;
-  onDelete?(src: string): void;
 }
 
 const ImageGallery: FC<Props> = ({ visible, onSelect, onClose }) => {
@@ -104,8 +103,8 @@ const ImageGallery: FC<Props> = ({ visible, onSelect, onClose }) => {
         
         <div className="grid gap-4 md:grid-cols-4 grid-cols-2 mt-4">
           {isUploading && (<div className="w-full aspect-square rounded animate-pulse bg-gray-200"></div>)}
-          {images?.map((item) => {
-            return (<GalleryImage onSelectClick={() => handleSelection(item)}
+          {images?.map((item, index) => {
+            return (<GalleryImage key={index} onSelectClick={() => handleSelection(item)}
             src={item}/>);
           })}
         </div>

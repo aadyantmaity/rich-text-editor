@@ -17,9 +17,6 @@ const GalleryImage: FC<Props> = ({src, onDeleteClick, onSelectClick}) => {
             />
 
             <div className="hidden absolute group-hover:flex bottom-0 left-0 right-0">
-                <button onClick = {onDeleteClick} className="bg-red-400 text-white flex-1 flex items-center justify-center p-2">
-                    <BiSolidTrash/>
-                </button>
                 <button onClick={onSelectClick} className="bg-green-400 text-white flex-1 flex items-center justify-center p-2">
                     <BiCheck/>
                 </button>
